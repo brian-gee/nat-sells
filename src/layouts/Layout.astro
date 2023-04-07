@@ -1,31 +1,9 @@
 ---
-import { SEO } from 'astro-seo';
-// import Footer from '@components/footer.astro';
-// import Navbar from '@components/navbar/navbar.astro';
-// import '@fontsource/inter/variable.css';
-
 export interface Props {
   title: string;
 }
 
-// const { src } = await getImage({
-//   src: "../../assets/hero.png",
-//   width: 800,
-//   height: 742,
-//   format: "avif",
-// });
-// console.log(src);
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  '/opengraph.jpg',
-  Astro.site
-).toString();
-
 const { title } = Astro.props;
-
-const makeTitle = title ? title + ' | ' + 'natsells' : 'natsells';
 ---
 
 <!DOCTYPE html>
@@ -33,38 +11,23 @@ const makeTitle = title ? title + ' | ' + 'natsells' : 'natsells';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-    <SEO
-      title={makeTitle}
-      description="Brian Geertsma's personal website"
-      canonical={canonicalURL}
-      openGraph={{
-        basic: {
-          url: canonicalURL,
-          type: 'website',
-          title: `natsells`,
-          image: resolvedImageWithDomain,
-        },
-        image: {
-          alt: 'natsells',
-        },
-      }}
-    />
+    <title>{title}</title>
   </head>
-  <body>
-    <!-- <Navbar /> -->
+  <body class="bg-charcoal-500">
     <slot />
-    <!-- <Footer /> -->
-    <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-      img {
-        content-visibility: auto;
-      }
-    </style>
-    <body class="bg-charcoal-500"></body>
   </body>
 </html>
+<style is:global>
+  :root {
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    color: white;
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+</style>
