@@ -1,8 +1,18 @@
+---
+import ProductCard from './ProductCard.astro';
+---
+
 <main aria-labelledby="header" class="relative overflow-hidden">
   <h2 class="sr-only" id="header">Header</h2>
   <div class="relative mx-auto px-8 max-w-7xl py-12 lg:py-24 lg:px-36 md:px-12">
     <div
       class="grid grid-cols-1 gap-6 py-12 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-2">
+      <ProductCard
+        name="test"
+        description="test"
+        price={5}
+        image="https://cdn.dribbble.com/users/1622978/screenshots/16873134/media/7f5d72bce5b94fe1ae56484394de673f.jpg?compress=1&resize=1600x1200&vertical=top"
+      />
       <figure>
         <img
           class="w-full rounded-3xl shadow-2xl"
