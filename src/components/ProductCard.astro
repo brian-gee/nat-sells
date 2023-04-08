@@ -8,23 +8,22 @@ const { name, image, description } = Astro.props as Props;
 ---
 
 <figure class="relative rounded-3xl">
-  <a href="http://" target="_blank" rel="noopener noreferrer"> </a>
-  <img
-    class="w-full rounded-3xl shadow-2xl"
-    src={image}
-    alt={description}
-    width="1600"
-    height="1200"
-  />
+  <a href="http://" target="_blank" rel="noopener noreferrer">
+    <img
+      class="w-full rounded-3xl shadow-2xl"
+      src={image}
+      alt={description}
+      width="1600"
+      height="1200"
+    />
+  </a>
   <div class="absolute inset-0 flex flex-col justify-center items-center">
     <div
-      class="text-center w-2/3 py-3 rounded-3xl"
+      class="text-center w-2/3 py-3 rounded-3xl hover:scale-110"
       style="background-color: rgba(0, 0, 0, 0.8);">
-      <!-- <h3 class="text-sm text-negroni-500"> -->
-      <!-- {description} -->
-      <!-- </h3> -->
-      <p class="mt-1 text-xl font-medium leading-6 text-white">{name}</p>
-      <!-- <p class="text-base text-tomato-500">${price}</p> -->
+      <p class="mt-1 text-xl font-medium leading-6 text-white">
+        {name}
+      </p>
     </div>
   </div>
 </figure>
