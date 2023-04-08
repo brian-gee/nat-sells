@@ -2,9 +2,8 @@
 export interface Props {
   name: string;
   image: string;
-  description: string;
 }
-const { name, image, description } = Astro.props as Props;
+const { name, image } = Astro.props as Props;
 ---
 
 <figure class="relative rounded-3xl">
@@ -12,7 +11,7 @@ const { name, image, description } = Astro.props as Props;
     <img
       class="w-full rounded-3xl shadow-2xl"
       src={image}
-      alt={description}
+      alt={name}
       width="1600"
       height="1200"
     />
